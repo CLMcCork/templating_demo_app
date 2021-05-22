@@ -9,6 +9,12 @@ app.get("/", (req, res) => {
     res.render("home")
 })
 
+app.get("/rand", (req, res) => {
+    const num = Math.floor(Math.random() * 10) + 1; 
+    //goal is to move as much logic out of .ejs files and put it in here instead
+    res.render("random", { rand: num })
+})
+
 app.listen(3000, () => {
     console.log("Listening on port 3000!")
 })
