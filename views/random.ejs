@@ -7,8 +7,13 @@
     <title>RANDOM</title>
 </head>
 <body>
-    <h1>Your random number is: <%= rand %></h1>
-    
+    <h1>Your random number is: <%= rand %></h1>  <!--the ejs on this line (=) embeds a value and then renders it-->
+    <% if(rand % 2 === 0) { %>  <!--notice the difference of the logic here for the ejs signs--no equal sign, this code is ran   --> 
+    <h2>That is an even number!</h2> <!--if the above line is true, this line is rendered-->
+    <% } else { %>
+    <h2>That is an odd number!</h2> <!--otherwise, this line is rendered-->
+    <% } %>
+    <h3>That number is: <%= rand%2===0 ? "EVEN" : "ODD" %></h3> <!--this line is embedded so use the equal sign for ejs-->
     
 </body>
 </html>
